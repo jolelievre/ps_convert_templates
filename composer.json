@@ -1,0 +1,13 @@
+{
+    "name": "jo/test",
+    "require": {
+        "symfony/finder": "^4.2",
+        "symfony/filesystem": "^4.2"
+    },
+    "authors": [
+        {
+            "name": "Jonathan Lelievre",
+            "email": "jo.lelievre@gmail.com"
+        }
+    ]
+}
