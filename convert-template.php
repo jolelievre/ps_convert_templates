@@ -2,6 +2,11 @@
 
 include_once 'vendor/autoload.php';
 
+use Symfony\Component\DomCrawler\Crawler;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Finder\Finder;
+use Symfony\Component\Finder\SplFileInfo;
+
 $templateFolder = realpath($argv[1]);
 if (!is_dir($templateFolder)) {
     throw new RuntimeException('Invalid template folder: '.$templateFolder);
@@ -12,8 +17,8 @@ if (!is_dir($outputFolder)) {
     throw new RuntimeException('Invalid output folder: '.$outputFolder);
 }
 
-$fileSystem = new \Symfony\Component\Filesystem\Filesystem();
-$finder = new \Symfony\Component\Finder\Finder();
+$fileSystem = new Filesystem();
+$finder = new Finder();
 $finder->files()->name('*.php')->in($templateFolder)->sortByName();
 
 $ignoredFiles = [
@@ -23,7 +28,7 @@ $ignoredFiles = [
     'footer.php',
 ];
 
-/** @var \Symfony\Component\Finder\SplFileInfo $file */
+/** @var SplFileInfo $file */
 foreach ($finder as $file) {
     $relativePath = $file->getRelativePath() . DIRECTORY_SEPARATOR . $file->getBasename();
     if (in_array($file->getBasename(), $ignoredFiles)) {
@@ -68,6 +73,7 @@ foreach ($finder as $file) {
     }
     $templateContent = trim($templateContent);
     $templateContent = preg_replace('/\t/', '  ', $templateContent);
+    $templateContent = insertTwigConditions($templateContent);
 
     $layout = <<<END_LAYOUT
 {% extends '@MailThemes/classic/components/$twigLayout' %}
@@ -139,4 +145,66 @@ function convertTranslations($templateContent) {
     }
 
     return $templateContent;
+}
+
+/**
+ * @param string $templateContent
+ * @param string $containerSelector
+ * @param string $mailType
+ *
+ * @return string
+ */
+function replaceContainerWithTwigCondition($templateContent, $containerSelector, $mailType)
+{
+    $crawler = new Crawler($templateContent);
+
+    $crawler->filter($containerSelector)->each(function (Crawler $crawler) use ($mailType) {
+        foreach ($crawler as $node) {
+            $replaceNodes = [];
+            $replaceNodes[] = $node->ownerDocument->createTextNode('{% if templateType == \'' . $mailType . '\' %}'.PHP_EOL);
+            /** @var \DOMElement $childNode */
+            foreach ($node->childNodes as $childNode) {
+                $replaceNodes[] = $childNode->cloneNode(true);
+            }
+            $replaceNodes[] = $node->ownerDocument->createTextNode(PHP_EOL . '{% endif %}');
+
+            foreach ($replaceNodes as $childNode) {
+                $node->parentNode->insertBefore($childNode, $node);
+            }
+            $node->parentNode->removeChild($node);
+        }
+    });
+
+    $filteredContent = '';
+    foreach ($crawler as $domElement) {
+        $filteredContent .= $domElement->ownerDocument->saveXML($domElement);
+    }
+
+    return $filteredContent;
+}
+
+/**
+ * @param string $htmlContent
+ *
+ * @return string
+ */
+function insertTwigConditions($htmlContent)
+{
+    $htmlContent = str_replace('&nbsp;', '@nbsp;', $htmlContent);
+    $htmlContent = replaceContainerWithTwigCondition($htmlContent, 'html-only', 'html');
+    $htmlContent = replaceContainerWithTwigCondition($htmlContent, 'txt-only', 'txt');
+
+    //MJML returns a full html template, get only the body content
+    $crawler = new Crawler($htmlContent);
+    /** @var Crawler $filteredCrawler */
+    $filteredCrawler = $crawler->filter('body > *');
+    $extractedNodes = [];
+    /** @var \DOMElement $childNode */
+    foreach ($filteredCrawler as $childNode) {
+        $extractedNodes[] = $childNode->ownerDocument->saveXML($childNode);
+    }
+    $extractedHtml = implode(PHP_EOL, $extractedNodes);
+    $extractedHtml = str_replace('@nbsp;', '&nbsp;', $extractedHtml);
+
+    return $extractedHtml;
 }
