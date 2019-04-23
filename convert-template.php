@@ -124,15 +124,16 @@ function convertTranslations($templateContent) {
             $hasHtml = $translationKey != strip_tags($translationKey);
             $hasVariables = preg_match('/\{{1}.+\}{1}/', $translationKey);
             if ($hasVariables && !$hasHtml) {
-                $translationLayout = "{{ '%s'|trans({}, 'EmailsBody', locale) }}";
+                $translationLayout = "{{ '%s'|trans({}, 'Emails.Body', locale) }}";
             } else {
-                $translationLayout = "{{ '%s'|trans({}, 'EmailsBody', locale)|raw }}";
+                $translationLayout = "{{ '%s'|trans({}, 'Emails.Body', locale)|raw }}";
             }
 
             return sprintf($translationLayout, $translationKey);
         }, $templateContent);
     }
 
+    //Recursive call as long as some "echo" are present
     if (preg_match($translationRegexp, $templateContent, $matches)) {
         return convertTranslations($templateContent);
     }
