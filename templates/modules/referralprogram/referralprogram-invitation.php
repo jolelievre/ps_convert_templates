@@ -36,8 +36,8 @@
 <tr>
 	<td class="linkbelow">
 		<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-			<span><?php echo t('When signing up, don&#039;t forget to provide the e-mail address of your referring friend:'); ?> <span><strong>{email}</strong></span>.<br/><br/>
-			<span><?php echo t('Best regards,'); ?>
+			<span><?php echo t('When signing up, don&#039;t forget to provide the e-mail address of your referring friend:'); ?> <span><strong>{email}</strong></span></span>.<br/><br/>
+			<span><?php echo t('Best regards,'); ?></span>
 		</font>
 	</td>
 </tr>
