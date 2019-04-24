@@ -18,9 +18,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('Order details'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('Order details'); ?>
+							</p>
+						</html-only>
 						<span>
 							<span><strong><?php echo t('Order:'); ?></strong></span> {order_name} <?php echo t('Placed on'); ?> {date}<br /><br />
 							<span><strong><?php echo t('Payment:'); ?></strong></span> {payment}
@@ -229,9 +231,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('Shipping'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('Shipping'); ?>
+							</p>
+						</html-only>
 						<span>
 							<span><strong><?php echo t('Carrier:'); ?></strong></span> {carrier}<br /><br />
 							<span><strong><?php echo t('Payment:'); ?></strong></span> {payment}
@@ -256,12 +260,14 @@
 							<td width="10">&nbsp;</td>
 							<td>
 								<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-									<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-										<?php echo t('Delivery address'); ?>
-									</p>
-									<span data-html-only="1">
-										{delivery_block_html}
-									</span>
+									<html-only>
+										<p style="border-bottom:1px solid #D6D4D4;">
+											<?php echo t('Delivery address'); ?>
+										</p>
+										<span>
+											{delivery_block_html}
+										</span>
+									</html-only>
 									<span data-text-only="1">
 										{delivery_block_txt}
 									</span>
@@ -278,12 +284,14 @@
 							<td width="10">&nbsp;</td>
 							<td>
 								<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-									<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-										<?php echo t('Billing address'); ?>
-									</p>
-									<span data-html-only="1">
-										{invoice_block_html}
-									</span>
+									<html-only>
+										<p style="border-bottom:1px solid #D6D4D4;">
+											<?php echo t('Billing address'); ?>
+										</p>
+										<span>
+											{invoice_block_html}
+										</span>
+									</html-only>
 									<span data-text-only="1">
 										{invoice_block_txt}
 									</span>

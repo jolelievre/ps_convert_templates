@@ -17,9 +17,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('Order {order_name}'); ?>&nbsp;-&nbsp;<?php echo t('Credit slip created'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('Order {order_name}'); ?>&nbsp;-&nbsp;<?php echo t('Credit slip created'); ?>
+							</p>
+						</html-only>
 						<span>
 							<?php echo t('We have generated a credit slip in your name for order with the reference <span><strong>{order_name}</strong></span>.'); ?>
 						</span>

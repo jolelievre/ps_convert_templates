@@ -17,9 +17,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('Import complete'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('Import complete'); ?>
+							</p>
+						</html-only>
 						<span>
 							<?php echo t('The file {filename} has been successfully imported to your shop.'); ?></a>
 						</span>

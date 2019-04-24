@@ -17,9 +17,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('Your customer account creation'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('Your customer account creation'); ?>
+							</p>
+						</html-only>
 						<span>
 							<?php echo t('Your guest account for <span><strong>{shop_name}</strong></span> has been transformed into a customer account.'); ?> <br /><br />
 							<span><strong><?php echo t('E-mail address:'); ?></strong></span> {email}

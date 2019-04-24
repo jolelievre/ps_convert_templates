@@ -17,9 +17,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('Your cart at {shop_name}'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('Your cart at {shop_name}'); ?>
+							</p>
+						</html-only>
 						<span>
 							<?php echo t('We noticed that during your last visit on {shop_name}, you did not complete the order you had started.'); ?><br /> <br />
 							<?php echo t('Your cart has been saved, you can resume your order by visiting our shop:'); ?> <span><strong><a title="{shop_name}" href="{shop_url}">{shop_url}</a></strong></span><br /><br />
@@ -42,9 +44,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('Your {shop_name} login details'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('Your {shop_name} login details'); ?>
+							</p>
+						</html-only>
 						<span>
 							<span><strong><?php echo t('Here is your coupon:'); ?></strong></span> {voucher_num}<br />
 							<?php echo t('Enter this code in your shopping cart to get your discount.'); ?>

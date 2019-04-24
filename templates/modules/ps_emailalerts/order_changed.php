@@ -17,9 +17,11 @@
                 <td width="10" style="padding:7px 0">&nbsp;</td>
                 <td style="padding:7px 0">
                     <font size="2" face="Open-sans, sans-serif" color="#555454">
-                        <p data-html-only="1" style="border-bottom:1px solid #D6D4D4;margin:3px 0 7px;text-transform:uppercase;font-weight:500;font-size:18px;padding-bottom:10px">
-                            <?php echo t('Order {order_name}'); ?>&nbsp;-&nbsp;<?php echo t('Order edited'); ?>
-                        </p>
+                        <html-only>
+                            <p style="border-bottom:1px solid #D6D4D4;margin:3px 0 7px;text-transform:uppercase;font-weight:500;font-size:18px;padding-bottom:10px">
+                                <?php echo t('Order {order_name}'); ?>&nbsp;-&nbsp;<?php echo t('Order edited'); ?>
+                            </p>
+						</html-only>
                         <span style="color:#777">
                             <?php echo t('Your order with the reference <span><strong>{order_name}</strong></span> has been modified.'); ?>
                         </span>

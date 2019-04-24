@@ -17,9 +17,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('Message from {shop_name}'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('Message from {shop_name}'); ?>
+							</p>
+						</html-only>
 						<span>
 							<?php echo t('You have received a new message from <span><strong>{shop_name}</strong></span> regarding order with the reference <span><strong>{order_name}</strong></span>.'); ?><br /><br />
 							<span><strong><?php echo t('Message:'); ?></strong></span> {message}

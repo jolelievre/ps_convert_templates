@@ -18,9 +18,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('You are one of our best customers and as such we want to thank you for your continued patronage.'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('You are one of our best customers and as such we want to thank you for your continued patronage.'); ?>
+							</p>
+						</html-only>
 						<span>
 							<?php echo t('As appreciation for your loyalty, we want to give you a discount of <span><strong>{amount}</strong></span>% valid on your next order! This offer is valid for <span><strong>{days}</strong></span> days, so do not waste a moment!'); ?><br /> <br />
 							<span><strong><?php echo t('Here is your coupon:'); ?></strong></span> {voucher_num}<br /><br />

@@ -18,9 +18,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('Order {order_name}'); ?>&nbsp;-&nbsp;<?php echo t('Awaiting wire payment'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('Order {order_name}'); ?>&nbsp;-&nbsp;<?php echo t('Awaiting wire payment'); ?>
+							</p>
+						</html-only>
 						<span>
 							<?php echo t('Your order with the reference <span><strong>{order_name}</strong></span> has been placed successfully and will be <strong>shipped as soon as we receive your payment</strong>.'); ?>
 						</span>

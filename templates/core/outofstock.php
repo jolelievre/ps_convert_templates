@@ -18,9 +18,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('Order {order_name}'); ?>&nbsp;-&nbsp;<?php echo t('Item(s) out of stock'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('Order {order_name}'); ?>&nbsp;-&nbsp;<?php echo t('Item(s) out of stock'); ?>
+							</p>
+						</html-only>
 						<span>
 							<?php echo t('Unfortunately, one or more items are currently out of stock. This may cause a slight delay in your delivery. Please accept our apologies and rest assured that we are working hard to rectify this.'); ?>
 						</span>

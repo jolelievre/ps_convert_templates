@@ -17,9 +17,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('You have received a new log alert'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('You have received a new log alert'); ?>
+							</p>
+						</html-only>
 						<span>
 							<?php echo t('<span><strong>Warning:</strong></span> you have received a new log alert in your Back Office.'); ?><br /><br />
 							<?php echo t('You can check for it in the <span><strong>"Tools" &gt; "Logs"</strong></span> section of your Back Office.'); ?>

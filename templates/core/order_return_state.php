@@ -17,9 +17,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('Return #{id_order_return} - update'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('Return #{id_order_return} - update'); ?>
+							</p>
+						</html-only>
 						<span>
 							<?php echo t('We have updated the progress on your return #{id_order_return}, the new status is:'); ?> <span><strong>"{state_order_return}"</strong></span><br />
 						</span>

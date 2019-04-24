@@ -17,9 +17,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('This is to inform you about the creation of a voucher.'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('This is to inform you about the creation of a voucher.'); ?>
+							</p>
+						</html-only>
 						<span>
 							<?php echo t('Here is the code of your voucher:'); ?> <span><strong>{voucher_num}</strong></span><br/><br/>
 							<?php echo t('Simply copy/paste this code during the payment process for your next order.'); ?>

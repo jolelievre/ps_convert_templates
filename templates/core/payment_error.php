@@ -17,9 +17,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('Order {order_name}'); ?>&nbsp;-&nbsp;<?php echo t('Payment processing error'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('Order {order_name}'); ?>&nbsp;-&nbsp;<?php echo t('Payment processing error'); ?>
+							</p>
+						</html-only>
 						<span>
 							<?php echo t('There is a problem with your payment for <strong><span>{shop_name}</span></strong> order with the reference <strong><span>{order_name}</span></strong>. Please contact us at your earliest convenience.'); ?><br/>
 							<strong><span><?php echo t('We cannot ship your order until we receive your payment.'); ?></span></strong>

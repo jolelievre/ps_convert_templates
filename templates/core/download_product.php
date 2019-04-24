@@ -18,9 +18,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('Product(s) now available for download'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('Product(s) now available for download'); ?>
+							</p>
+						</html-only>
 						<span>
 							<?php echo t('You have <span><strong>{nbProducts}</strong></span> product(s) now available for download using the following link(s):'); ?><br/><br/>
 							{virtualProducts}

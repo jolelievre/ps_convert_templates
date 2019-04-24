@@ -17,9 +17,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('{product} is now available.'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('{product} is now available.'); ?>
+							</p>
+						</html-only>
 						<span>
 							<?php echo t('This item is once again in-stock.'); ?><br /><br />
 							<?php echo t('You can access the product page by clicking on the link:'); ?> <span><strong><a href="{product_link}">{product}</a></strong></span><br />

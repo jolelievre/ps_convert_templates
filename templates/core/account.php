@@ -18,9 +18,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('Your {shop_name} login details'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('Your {shop_name} login details'); ?>
+							</p>
+						</html-only>
 						<span>
 							<?php echo t('Here are your login details:'); ?><br />
 							<span><strong><?php echo t('E-mail address:'); ?> <a href="mailto:{email}">{email}</a></strong></span>

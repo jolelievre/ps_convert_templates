@@ -18,9 +18,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('Order {order_name}'); ?>&nbsp;-&nbsp;<?php echo t('Awaiting check payment'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('Order {order_name}'); ?>&nbsp;-&nbsp;<?php echo t('Awaiting check payment'); ?>
+							</p>
+						</html-only>
 						<span>
 							<?php echo t('Your order with the reference <span><strong>{order_name}</strong></span> has been placed successfully and will be <strong>shipped as soon as we receive your payment</strong>.'); ?>
 						</span>
@@ -48,7 +50,9 @@
 							<?php echo t('Here are the bank details for your check:'); ?><br />
 							<span><strong><?php echo t('Amount:'); ?></strong></span> {total_paid}<br />
 							<span><strong><?php echo t('Payable to the order of:'); ?></strong></span> {check_name}<br />
-							<span><strong><?php echo t('Please mail your check to:'); ?></strong></span> <html-only>{check_address_html}</html-only> <span data-text-only='1'>{check_address}</span>
+							<span><strong><?php echo t('Please mail your check to:'); ?></strong></span>
+							<html-only>{check_address_html}</html-only> 
+							<txt-only>{check_address}</txt-only>
 						</span>
 					</font>
 				</td>

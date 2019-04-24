@@ -15,9 +15,11 @@
 				<td width="10">&nbsp;</td>
 				<td>
 					<font size="2" face="<?php echo $emailDefaultFont ?>Open-sans, sans-serif" color="#555454">
-						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;">
-							<?php echo t('Referral Program'); ?>
-						</p>
+						<html-only>
+							<p style="border-bottom:1px solid #D6D4D4;">
+								<?php echo t('Referral Program'); ?>
+							</p>
+						</html-only>
 						<span>
 							<?php echo t('We have created a voucher in your name for referring a friend.'); ?><br />
 							<?php echo t('Here is the code of your voucher:'); ?> <span><strong>{voucher_num}</strong></span><?php echo t(', with an amount of'); ?> <span><strong>{voucher_amount}</strong></span>.<br /><br />
