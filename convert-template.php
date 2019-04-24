@@ -119,7 +119,7 @@ function convertVariables($templateContent)
 }
 
 function convertTranslations($templateContent) {
-    $translationRegexp = "/\<\?php +echo +t\(\'([^']+)\'\); +\?\>/";
+    $translationRegexp = "/\<\?php +echo +t\(\'(.+?)\'\); +\?\>/";
     if (preg_match($translationRegexp, $templateContent, $matches)) {
         $templateContent = preg_replace_callback($translationRegexp, function(array $matches) {
             $translationKey = $matches[1];
